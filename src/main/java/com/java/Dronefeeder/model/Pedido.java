@@ -1,11 +1,24 @@
 package com.java.Dronefeeder.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Pedido {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  Cliente idCliente;
+  @ManyToOne
+  @JoinColumn(name = "idCliente")
+  private Cliente cliente;
+
+  @ManyToOne
+  @JoinColumn(name = "idRetiradaEntrega")
+  private RetiradaEntrega retiradaEntrega;
 
   public Long getId() {
     return id;
@@ -16,30 +29,28 @@ public class Pedido {
   }
 
   public Cliente getIdCliente() {
-    return idCliente;
+    return cliente;
   }
 
   public void setIdCliente(Cliente idCliente) {
-    this.idCliente = idCliente;
+    this.cliente = idCliente;
   }
 
-  public LatitudeLongitude getLocRetirada() {
-    return locRetirada;
+  public Cliente getCliente() {
+    return cliente;
   }
 
-  public void setLocRetirada(LatitudeLongitude locRetirada) {
-    this.locRetirada = locRetirada;
+  public void setCliente(Cliente cliente) {
+    this.cliente = cliente;
   }
 
-  public LatitudeLongitude getLocEntrega() {
-    return locEntrega;
+  public RetiradaEntrega getRetiradaEntrega() {
+    return retiradaEntrega;
   }
 
-  public void setLocEntrega(LatitudeLongitude locEntrega) {
-    this.locEntrega = locEntrega;
+  public void setRetiradaEntrega(RetiradaEntrega retiradaEntrega) {
+    this.retiradaEntrega = retiradaEntrega;
   }
 
-  LatitudeLongitude locRetirada;
-  LatitudeLongitude locEntrega;
 
 }
