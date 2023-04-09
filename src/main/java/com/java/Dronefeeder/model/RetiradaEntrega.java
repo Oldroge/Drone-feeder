@@ -2,17 +2,51 @@ package com.java.Dronefeeder.model;
 
 import java.time.LocalDateTime;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
 public class RetiradaEntrega {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
   private LocalDateTime dataRetirada;
   private LocalDateTime dataEntrega;
   private boolean isEntregue;
+  @ManyToOne
+  @JoinColumn(name = "idLatitudeLongitude")
   private LatitudeLongitude latitudeLongitude;
+
+  @OneToOne
+  @JoinColumn(name = "idVideo")
   private Video video;
-  private Pedido pedido;
+  @ManyToOne
+  @JoinColumn(name = "idDrones")
   private Drones drones;
+
+  private String locRetirada;
+  private String locEntrega;
+
+
+  public String getLocRetirada() {
+    return locRetirada;
+  }
+
+  public void setLocRetirada(String locRetirada) {
+    this.locRetirada = locRetirada;
+  }
+
+  public String getLocEntrega() {
+    return locEntrega;
+  }
+
+  public void setLocEntrega(String locEntrega) {
+    this.locEntrega = locEntrega;
+  }
 
   public Long getId() {
     return id;
@@ -44,14 +78,6 @@ public class RetiradaEntrega {
 
   public void setVideo(Video video) {
     this.video = video;
-  }
-
-  public Pedido getPedido() {
-    return pedido;
-  }
-
-  public void setPedido(Pedido pedido) {
-    this.pedido = pedido;
   }
 
   public Drones getDrones() {
