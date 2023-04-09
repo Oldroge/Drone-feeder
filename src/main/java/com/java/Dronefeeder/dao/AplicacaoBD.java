@@ -1,12 +1,5 @@
 package com.java.Dronefeeder.dao;
 
-import com.java.Dronefeeder.dao.ClienteDao;
-import com.java.Dronefeeder.dao.DronesDao;
-import com.java.Dronefeeder.dao.LatitudeLongitudeDao;
-import com.java.Dronefeeder.dao.PedidoDao;
-import com.java.Dronefeeder.dao.RetiradaEntregaDao;
-import com.java.Dronefeeder.dao.VideoDao;
-
 /**
  * Classe AplicacaoBd.
  **/
@@ -22,7 +15,6 @@ public class AplicacaoBD {
   private PedidoDao pedidoDao;
   private RetiradaEntregaDao retiradaEntregaDao;
   private VideoDao videoDao;
-
 
   /**
    * Métodos.
