@@ -12,7 +12,8 @@
 	<artifactId>Drone-feeder</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Drone-feeder</name>
-	<description>Demo project for Spring Boot</description>
+	<url>https://github.com/Oldroge/Drone-feeder</url>
+	<description>Entregas feitas por drones</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -40,6 +41,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+    		<groupId>javax.xml.bind</groupId>
+    		<artifactId>jaxb-api</artifactId>
 		</dependency>
 		
 		<dependency>
