@@ -11,18 +11,18 @@ import javax.persistence.ManyToOne;
 public class Drones {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long drones_id;
 
   @ManyToOne
-  @JoinColumn(name = "idLatitudeLongitude")
+  @JoinColumn(name = "latitude_longitude_id")
   private LatitudeLongitude latitudeLongitude;
 
-  public Long getId() {
-    return id;
+  public Long getDrones_id() {
+    return drones_id;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setDrones_id(Long drones_id) {
+    this.drones_id = drones_id;
   }
 
   public LatitudeLongitude getLatitudeLongitude() {

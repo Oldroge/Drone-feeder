@@ -9,16 +9,16 @@ import javax.persistence.Id;
 public class LatitudeLongitude {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long latitude_longitude_id;
   private String latitude;
   private String longitude;
 
-  public Long getId() {
-    return id;
+  public Long getLatitude_longitude_id() {
+    return latitude_longitude_id;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setLatitude_longitude_id(Long latitude_longitude_id) {
+    this.latitude_longitude_id = latitude_longitude_id;
   }
 
   public String getLatitude() {

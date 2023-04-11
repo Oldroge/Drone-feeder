@@ -11,29 +11,21 @@ import javax.persistence.ManyToOne;
 public class Pedido {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long pedido_id;
   @ManyToOne
-  @JoinColumn(name = "idCliente")
+  @JoinColumn(name = "clientes_id")
   private Cliente cliente;
 
   @ManyToOne
-  @JoinColumn(name = "idRetiradaEntrega")
+  @JoinColumn(name = "retirada_entrega_id")
   private RetiradaEntrega retiradaEntrega;
 
-  public Long getId() {
-    return id;
+  public Long getPedido_id() {
+    return pedido_id;
   }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public Cliente getIdCliente() {
-    return cliente;
-  }
-
-  public void setIdCliente(Cliente idCliente) {
-    this.cliente = idCliente;
+  public void setPedido_id(Long pedido_id) {
+    this.pedido_id = pedido_id;
   }
 
   public Cliente getCliente() {
