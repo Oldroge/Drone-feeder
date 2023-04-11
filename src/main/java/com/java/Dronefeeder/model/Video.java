@@ -9,15 +9,16 @@ import javax.persistence.Id;
 public class Video {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long video_id;
   private String video;
 
-  public Long getId() {
-    return id;
+
+  public Long getVideo_id() {
+    return video_id;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setVideo_id(Long video_id) {
+    this.video_id = video_id;
   }
 
   public String getVideo() {

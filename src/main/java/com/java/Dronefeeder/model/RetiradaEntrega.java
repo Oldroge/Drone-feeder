@@ -13,19 +13,19 @@ import javax.persistence.OneToOne;
 public class RetiradaEntrega {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long retirada_entrega_id;
   private LocalDateTime dataRetirada;
   private LocalDateTime dataEntrega;
   private boolean isEntregue;
   @ManyToOne
-  @JoinColumn(name = "idLatitudeLongitude")
+  @JoinColumn(name = "latitude_longitude_id")
   private LatitudeLongitude latitudeLongitude;
 
   @OneToOne
-  @JoinColumn(name = "idVideo")
+  @JoinColumn(name = "video_id")
   private Video video;
   @ManyToOne
-  @JoinColumn(name = "idDrones")
+  @JoinColumn(name = "drones_id")
   private Drones drones;
 
   private String locRetirada;
@@ -48,12 +48,12 @@ public class RetiradaEntrega {
     this.locEntrega = locEntrega;
   }
 
-  public Long getId() {
-    return id;
+  public Long getRetirada_entrega_id() {
+    return retirada_entrega_id;
   }
 
-  public void setId(Long id) {
-    this.id = id;
+  public void setRetirada_entrega_id(Long retirada_entrega_id) {
+    this.retirada_entrega_id = retirada_entrega_id;
   }
 
   public LocalDateTime getDataRetirada() {
