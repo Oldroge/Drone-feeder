@@ -14,4 +14,8 @@ public class ClienteService {
     return clienteRepository.save(novoCliente);
   }
 
+  public String deletaCliente(Long id) {
+    clienteRepository.deleteById(id);
+    return "Cliente removido";
+  }
 }
