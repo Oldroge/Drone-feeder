@@ -6,4 +6,4 @@ import org.springframework.stereotype.Repository;
 
 /**Interface Professional Repository.*/
 @Repository
-public interface RetiradaEntregaRepository extends JpaRepository<RetiradaEntrega, Integer> {}
+public interface RetiradaEntregaRepository extends JpaRepository<RetiradaEntrega, Long> {}

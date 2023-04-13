@@ -20,14 +20,10 @@ public class RetiradaEntrega {
   @ManyToOne
   @JoinColumn(name = "latitude_longitude_id")
   private LatitudeLongitude latitudeLongitude;
-
   @OneToOne
   @JoinColumn(name = "video_id")
   private Video video;
-  @ManyToOne
-  @JoinColumn(name = "drones_id")
-  private Drones drones;
-
+  private Long drones_id;
   private String locRetirada;
   private String locEntrega;
 
@@ -50,6 +46,14 @@ public class RetiradaEntrega {
 
   public Long getRetirada_entrega_id() {
     return retirada_entrega_id;
+  }
+  
+  public Long getDrones_id() {
+    return drones_id;
+  }
+  
+  public void setDrones_id(Long drones_id) {
+    this.drones_id = drones_id;
   }
 
   public void setRetirada_entrega_id(Long retirada_entrega_id) {
@@ -78,14 +82,6 @@ public class RetiradaEntrega {
 
   public void setVideo(Video video) {
     this.video = video;
-  }
-
-  public Drones getDrones() {
-    return drones;
-  }
-
-  public void setDrones(Drones drones) {
-    this.drones = drones;
   }
 
   public boolean isEntregue() {

@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS dronefeeder;
-CREATE DATABASE IF NOT EXISTS dronefeeder;
-use dronefeeder;
+DROP DATABASE IF EXISTS drone_feeder;
+CREATE DATABASE IF NOT EXISTS drone_feeder;
+use drone_feeder;
 insert into cliente(nome)
 values ("Roge");
 insert into cliente(nome)
