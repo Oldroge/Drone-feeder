@@ -15,9 +15,9 @@ public class Pedido {
   private Long pedido_id;
 
   @JsonIgnore
+  @JoinColumn(name = "clientes_id")
   @ManyToOne
   private Cliente cliente;
-
 
   @ManyToOne
   @JoinColumn(name = "retirada_entrega_id")
