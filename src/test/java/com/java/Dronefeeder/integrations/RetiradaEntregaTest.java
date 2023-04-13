@@ -4,7 +4,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.java.Dronefeeder.model.Video;
+import com.java.Dronefeeder.model.RetiradaEntrega;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -18,23 +18,22 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class VideoTest {
+public class RetiradaEntregaTest {
 
   @Autowired
   private MockMvc mockMvc;
 
   @Test
   @Order(1)
-  public void createVideo() throws Exception {
-    Video video = new Video();
-    video.setVideo("http://videos.seguranca.drone/262622");
+  public void createEntrega() throws Exception {
+    RetiradaEntrega retiradaEntrega = new RetiradaEntrega();
 
     mockMvc
       .perform(
-        post("/video")
+        post("/retirada")
           .contentType(MediaType.APPLICATION_JSON)
-          .content(new ObjectMapper().writeValueAsString(video))
-      ).andExpect(status().isCreated());   
+          .content(new ObjectMapper().writeValueAsString(retiradaEntrega))
+      ).andExpect(status().isNotFound());   
   }
 }
   
