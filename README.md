@@ -94,5 +94,5 @@ spring.jpa.hibernate.ddl-auto=update
 spring.servlet.multipart.max-file-size=50MB
 spring.servlet.multipart.max-request-size=50MB`
     </br>
-    * `docker-compose:up`
+    * `docker-compose:up --build`
 </br>
