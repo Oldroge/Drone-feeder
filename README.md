@@ -1,7 +1,8 @@
 <h1>Drone Feeder</h1>
 
-Integrantes:  - Rogério Martins
-              - Gustavo Pozzan Dalmoro
+Integrantes:
+      - Rogério Martins
+      - Gustavo Pozzan Dalmoro
 
 <h2>Índice</h2>
 <h4>- <a href="#context">Contexto</a></h4>
