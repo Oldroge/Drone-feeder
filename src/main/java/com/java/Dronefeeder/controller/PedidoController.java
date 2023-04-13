@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.java.Dronefeeder.model.Pedido;
@@ -26,6 +27,11 @@ public class PedidoController {
   public String deletaPedidoPorId(@PathVariable Long id) {
     pedidoService.deletaPedidoPorId(id);
     return "Pedido deletado com sucesso!";
+  }
+
+  @PostMapping("/{clienteId}")
+  public ResponseEntity<String> criarPedido(@PathVariable Long clienteId, Pedido pedido) {
+    return ResponseEntity.ok().body(pedidoService.criarPedido(clienteId, pedido));
   }
 
 }
