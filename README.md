@@ -70,9 +70,9 @@ spring.servlet.multipart.max-request-size=50MB
 </br>
 
   4. Instale as dependências:
-  </br>
-  * `mvn install`
-  </br>
+    </br>
+    * `mvn install`
+    </br>
 
   5. Inicie a aplicação, ela rodará na porta 8080:
     </br>
