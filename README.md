@@ -8,6 +8,7 @@ Integrantes:
 <h4>- <a href="#context">Contexto</a></h4>
 <h4>- <a href="#tecnologies">Técnologias utilizadas</a></h4>
 <h4>- <a href="#development">Desenvolvimento</a></h4>
+<h4>- <a href="#requirements">Requerimentos</a></h4>
 <h4>- <a href="#howtouse">Como executar o projeto</a></h4>
 
 <h2 id="context">Contexto</h2>
@@ -55,8 +56,7 @@ Integrantes:
 
   3. Configure as variáveis de ambiente:
     </br>
-    * No arquivo src/main/resources/application.properties é possível configurar suas variáveis de ambiente.
-    Segue exemplo:
+    * No arquivo src/main/resources/application.properties é possível configurar suas variáveis de ambiente. Segue exemplo:
     </br>
 ```sh
 spring.datasource.url=jdbc:mysql://127.0.0.1:8080/Drone_feeder
@@ -83,8 +83,7 @@ spring.servlet.multipart.max-request-size=50MB
     </br>
     * `service mysql stop`
     </br>
-    * `No arquivo src/main/resources/application.properties é necessário configurar suas variáveis de ambiente.`
-    Segue exemplo:
+    * `No arquivo src/main/resources/application.properties é necessário configurar suas variáveis de ambiente.` Segue exemplo:
     </br>
 `
 spring.datasource.url=jdbc:mysql://${MYSQL_HOST}:8080/${MYSQL_DATABASE}
