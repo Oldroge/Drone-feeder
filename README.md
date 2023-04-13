@@ -81,19 +81,19 @@ spring.servlet.multipart.max-request-size=50MB
     
   6. Para rodar a aplicação com Docker:
     </br>
-    * `mysql `
+    * `service mysql stop`
     </br>
-    * No arquivo src/main/resources/application.properties é necessário configurar suas variáveis de ambiente.
+    * `No arquivo src/main/resources/application.properties é necessário configurar suas variáveis de ambiente.`
     Segue exemplo:
     </br>
-```sh
+`
 spring.datasource.url=jdbc:mysql://${MYSQL_HOST}:8080/${MYSQL_DATABASE}
 spring.datasource.username=${MYSQL_USER}
 spring.datasource.password=${MYSQL_PASSWORD}
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.hibernate.ddl-auto=update
 spring.servlet.multipart.max-file-size=50MB
-spring.servlet.multipart.max-request-size=50MB
+spring.servlet.multipart.max-request-size=50MB`
     </br>
     * `docker-compose:up`
 </br>
