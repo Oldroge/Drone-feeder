@@ -2,6 +2,7 @@ package com.java.Dronefeeder.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +38,6 @@ public class LatitudeLongitudeController {
   
   @PostMapping
   public ResponseEntity<LatitudeLongitude> save(@RequestBody LatitudeLongitude retiradaEntrega) {
-    return ResponseEntity.ok().body(latitudeLongitudeService.save(retiradaEntrega));
+    return ResponseEntity.status(HttpStatus.CREATED).body(latitudeLongitudeService.save(retiradaEntrega));
   }
 }

@@ -4,7 +4,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.java.Dronefeeder.model.Video;
+import com.java.Dronefeeder.model.LatitudeLongitude;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -18,22 +18,23 @@ import org.springframework.test.web.servlet.MockMvc;
 @SpringBootTest
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class VideoTest {
+public class LatitudeLongitudeTest {
 
   @Autowired
   private MockMvc mockMvc;
 
   @Test
   @Order(1)
-  public void createVideo() throws Exception {
-    Video video = new Video();
-    video.setVideo("http://videos.seguranca.drone/262622");
+  public void createLatitudeLongitude() throws Exception {
+    LatitudeLongitude latitudeLongitude = new LatitudeLongitude();
+    latitudeLongitude.setLatitude("-27.578562316498715");
+    latitudeLongitude.setLongitude("-48.59879808648807");
 
     mockMvc
       .perform(
-        post("/video")
+        post("/latitude")
           .contentType(MediaType.APPLICATION_JSON)
-          .content(new ObjectMapper().writeValueAsString(video))
+          .content(new ObjectMapper().writeValueAsString(latitudeLongitude))
       ).andExpect(status().isCreated());   
   }
 }

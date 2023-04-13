@@ -2,6 +2,7 @@ package com.java.Dronefeeder.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -37,6 +38,6 @@ public class RetiradaEntregaController {
   
   @PostMapping
   public ResponseEntity<RetiradaEntrega> save(@RequestBody RetiradaEntrega retiradaEntrega) {
-    return ResponseEntity.ok().body(retiradaEntregaService.save(retiradaEntrega));
+    return ResponseEntity.status(HttpStatus.CREATED).body(retiradaEntregaService.save(retiradaEntrega));
   }
 }
