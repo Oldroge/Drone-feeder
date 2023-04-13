@@ -1,5 +1,6 @@
 package com.java.Dronefeeder.service;
 
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.java.Dronefeeder.model.Cliente;
@@ -17,5 +18,9 @@ public class ClienteService {
   public String deletaCliente(Long id) {
     clienteRepository.deleteById(id);
     return "Cliente removido";
+  }
+
+  public Optional<Cliente> clientePorId(Long id) {
+    return clienteRepository.findById(id);
   }
 }
