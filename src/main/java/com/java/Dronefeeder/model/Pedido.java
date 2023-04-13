@@ -1,6 +1,7 @@
 package com.java.Dronefeeder.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,7 +17,7 @@ public class Pedido {
   @JoinColumn(name = "clientes_id")
   private Cliente cliente;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "retirada_entrega_id")
   private RetiradaEntrega retiradaEntrega;
 

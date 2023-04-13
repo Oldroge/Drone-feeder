@@ -14,9 +14,5 @@ public class PedidoController {
   @GetMapping("/pedidos")
   public Iterable<Pedido> getAllPedidos() {
     return pedidoService.getAllPedidos();
-
   }
-
-
-
 }
