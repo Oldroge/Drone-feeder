@@ -1,23 +1,25 @@
 package com.java.Dronefeeder.model;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Pedido {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long pedido_id;
-  @ManyToOne
+
+  @JsonIgnore
   @JoinColumn(name = "clientes_id")
+  @ManyToOne
   private Cliente cliente;
 
-  @ManyToOne(fetch = FetchType.LAZY)
+  @ManyToOne
   @JoinColumn(name = "retirada_entrega_id")
   private RetiradaEntrega retiradaEntrega;
 
