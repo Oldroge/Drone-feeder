@@ -6,14 +6,12 @@ import org.springframework.stereotype.Service;
 
 import com.java.Dronefeeder.model.RetiradaEntrega;
 import com.java.Dronefeeder.repository.RetiradaEntregaRepository;
-import com.java.Dronefeeder.repository.PedidoRepository;
-import com.java.Dronefeeder.exception.EntregaNaoEncontrada;
+import com.java.Dronefeeder.exception.NotFoundException;
 
 @Service
 public class RetiradaEntregaService {
   @Autowired
   RetiradaEntregaRepository retiradaEntregaRepository;
-  PedidoRepository pedidoRepository;
 
   public List<RetiradaEntrega> findAll() {
     return retiradaEntregaRepository.findAll();
@@ -21,7 +19,7 @@ public class RetiradaEntregaService {
 
   public RetiradaEntrega findById(Long idRetiradaEntrega) {
     if (retiradaEntregaRepository.findById(idRetiradaEntrega).isEmpty()) {
-      throw new EntregaNaoEncontrada();
+      throw new NotFoundException();
     } else {
       return retiradaEntregaRepository.findById(idRetiradaEntrega).get();
     }
@@ -29,7 +27,7 @@ public class RetiradaEntregaService {
   
   public String deleteById(Long idRetiradaEntrega) {
     if (retiradaEntregaRepository.findById(idRetiradaEntrega).isEmpty()) {
-      throw new EntregaNaoEncontrada();
+      throw new NotFoundException();
     } else {
       retiradaEntregaRepository.deleteById(idRetiradaEntrega);
       return "Entrega deletada com sucesso!";
@@ -38,14 +36,5 @@ public class RetiradaEntregaService {
   
   public RetiradaEntrega save(RetiradaEntrega retiradaEntrega) {
     return retiradaEntregaRepository.save(retiradaEntrega);
-  }
-  
-  public RetiradaEntrega update(Long idRetiradaEntrega, RetiradaEntrega retiradaEntrega) {
-    if (retiradaEntregaRepository.findById(idRetiradaEntrega).isEmpty()) {
-      throw new EntregaNaoEncontrada();
-    } else {
-      retiradaEntregaRepository.deleteById(idRetiradaEntrega);
-      return retiradaEntregaRepository.save(retiradaEntrega);
-    }
   }
 }
