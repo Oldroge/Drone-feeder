@@ -12,6 +12,17 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Cliente {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long clientes_id;
+
+  @Column
+  private String nome;
+
+  @Column
+  @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+  private List<Pedido> pedido = new ArrayList<Pedido>();
+
   public Long getClientes_id() {
     return clientes_id;
   }
@@ -28,16 +39,6 @@ public class Cliente {
     this.pedido = pedido;
   }
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long clientes_id;
-
-  @Column
-  private String nome;
-
-  @Column
-  @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-  private List<Pedido> pedido = new ArrayList<Pedido>();
 
   public String getNome() {
     return nome;
