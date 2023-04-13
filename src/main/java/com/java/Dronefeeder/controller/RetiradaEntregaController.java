@@ -39,9 +39,4 @@ public class RetiradaEntregaController {
   public ResponseEntity<RetiradaEntrega> save(@RequestBody RetiradaEntrega retiradaEntrega) {
     return ResponseEntity.ok().body(retiradaEntregaService.save(retiradaEntrega));
   }
-  
-  @PostMapping("/{idEntrega}")
-  public ResponseEntity<RetiradaEntrega> update(@RequestBody RetiradaEntrega retiradaEntrega, Long idEntrega) {
-    return ResponseEntity.ok().body(retiradaEntregaService.update(idEntrega, retiradaEntrega));
-  }
 }

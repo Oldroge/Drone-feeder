@@ -32,7 +32,4 @@ public class Drones {
   public void setLatitudeLongitude(LatitudeLongitude latitudeLongitude) {
     this.latitudeLongitude = latitudeLongitude;
   }
-
-
-
 }
